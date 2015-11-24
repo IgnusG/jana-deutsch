@@ -1,0 +1,9 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+@mixin pre-scrollable-p {
+  max-height: $pre-scrollable-max-height;
+  overflow-y: scroll;
+}

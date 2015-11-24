@@ -1,0 +1,54 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+@mixin label-p {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: $label-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+
+  // [converter] extracted a& to a.label
+
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
+  }
+
+  // Quick fix for labels in buttons
+  .btn & {
+    position: relative;
+    top: -1px;
+  }
+}
+
+@mixin label-default-p {
+  @include label-variant($label-default-bg);
+}
+
+@mixin label-primary-p {
+  @include label-variant($label-primary-bg);
+}
+
+@mixin label-success-p {
+  @include label-variant($label-success-bg);
+}
+
+@mixin label-info-p {
+  @include label-variant($label-info-bg);
+}
+
+@mixin label-warning-p {
+  @include label-variant($label-warning-bg);
+}
+
+@mixin label-danger-p {
+  @include label-variant($label-danger-bg);
+}

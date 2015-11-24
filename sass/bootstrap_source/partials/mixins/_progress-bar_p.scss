@@ -1,0 +1,15 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+// Progress bars
+
+@mixin progress-bar-variant($color) {
+  background-color: $color;
+
+  // Deprecated parent class requirement as of v3.2.0
+  %progress-striped & {
+    @include gradient-striped;
+  }
+}

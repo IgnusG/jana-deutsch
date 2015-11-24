@@ -1,0 +1,42 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+@mixin progress-p {
+  overflow: hidden;
+  height: $line-height-computed;
+  margin-bottom: $line-height-computed;
+  background-color: $progress-bg;
+  border-radius: $progress-border-radius;
+  @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
+}
+
+@mixin progress-bar-p {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: $font-size-small;
+  line-height: $line-height-computed;
+  color: $progress-bar-color;
+  text-align: center;
+  background-color: $progress-bar-bg;
+  @include box-shadow(inset 0 -1px 0 rgba(0, 0, 0, .15));
+  @include transition(width .6s ease);
+}
+
+@mixin progress-bar-success-p {
+  @include progress-bar-variant($progress-bar-success-bg);
+}
+
+@mixin progress-bar-info-p {
+  @include progress-bar-variant($progress-bar-info-bg);
+}
+
+@mixin progress-bar-warning-p {
+  @include progress-bar-variant($progress-bar-warning-bg);
+}
+
+@mixin progress-bar-danger-p {
+  @include progress-bar-variant($progress-bar-danger-bg);
+}

@@ -1,0 +1,1582 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+@mixin glyphicon-p {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin glyphicon-asterisk-p {
+  &:before {
+    content: "\2a";
+  }
+}
+
+@mixin glyphicon-plus-p {
+  &:before {
+    content: "\2b";
+  }
+}
+
+@mixin glyphicon-minus-p {
+  &:before {
+    content: "\2212";
+  }
+}
+
+@mixin glyphicon-cloud-p {
+  &:before {
+    content: "\2601";
+  }
+}
+
+@mixin glyphicon-envelope-p {
+  &:before {
+    content: "\2709";
+  }
+}
+
+@mixin glyphicon-pencil-p {
+  &:before {
+    content: "\270f";
+  }
+}
+
+@mixin glyphicon-glass-p {
+  &:before {
+    content: "\e001";
+  }
+}
+
+@mixin glyphicon-music-p {
+  &:before {
+    content: "\e002";
+  }
+}
+
+@mixin glyphicon-search-p {
+  &:before {
+    content: "\e003";
+  }
+}
+
+@mixin glyphicon-heart-p {
+  &:before {
+    content: "\e005";
+  }
+}
+
+@mixin glyphicon-star-p {
+  &:before {
+    content: "\e006";
+  }
+}
+
+@mixin glyphicon-star-empty-p {
+  &:before {
+    content: "\e007";
+  }
+}
+
+@mixin glyphicon-user-p {
+  &:before {
+    content: "\e008";
+  }
+}
+
+@mixin glyphicon-film-p {
+  &:before {
+    content: "\e009";
+  }
+}
+
+@mixin glyphicon-th-large-p {
+  &:before {
+    content: "\e010";
+  }
+}
+
+@mixin glyphicon-th-p {
+  &:before {
+    content: "\e011";
+  }
+}
+
+@mixin glyphicon-th-list-p {
+  &:before {
+    content: "\e012";
+  }
+}
+
+@mixin glyphicon-ok-p {
+  &:before {
+    content: "\e013";
+  }
+}
+
+@mixin glyphicon-remove-p {
+  &:before {
+    content: "\e014";
+  }
+}
+
+@mixin glyphicon-zoom-in-p {
+  &:before {
+    content: "\e015";
+  }
+}
+
+@mixin glyphicon-zoom-out-p {
+  &:before {
+    content: "\e016";
+  }
+}
+
+@mixin glyphicon-off-p {
+  &:before {
+    content: "\e017";
+  }
+}
+
+@mixin glyphicon-signal-p {
+  &:before {
+    content: "\e018";
+  }
+}
+
+@mixin glyphicon-cog-p {
+  &:before {
+    content: "\e019";
+  }
+}
+
+@mixin glyphicon-trash-p {
+  &:before {
+    content: "\e020";
+  }
+}
+
+@mixin glyphicon-home-p {
+  &:before {
+    content: "\e021";
+  }
+}
+
+@mixin glyphicon-file-p {
+  &:before {
+    content: "\e022";
+  }
+}
+
+@mixin glyphicon-time-p {
+  &:before {
+    content: "\e023";
+  }
+}
+
+@mixin glyphicon-road-p {
+  &:before {
+    content: "\e024";
+  }
+}
+
+@mixin glyphicon-download-alt-p {
+  &:before {
+    content: "\e025";
+  }
+}
+
+@mixin glyphicon-download-p {
+  &:before {
+    content: "\e026";
+  }
+}
+
+@mixin glyphicon-upload-p {
+  &:before {
+    content: "\e027";
+  }
+}
+
+@mixin glyphicon-inbox-p {
+  &:before {
+    content: "\e028";
+  }
+}
+
+@mixin glyphicon-play-circle-p {
+  &:before {
+    content: "\e029";
+  }
+}
+
+@mixin glyphicon-repeat-p {
+  &:before {
+    content: "\e030";
+  }
+}
+
+@mixin glyphicon-refresh-p {
+  &:before {
+    content: "\e031";
+  }
+}
+
+@mixin glyphicon-list-alt-p {
+  &:before {
+    content: "\e032";
+  }
+}
+
+@mixin glyphicon-lock-p {
+  &:before {
+    content: "\e033";
+  }
+}
+
+@mixin glyphicon-flag-p {
+  &:before {
+    content: "\e034";
+  }
+}
+
+@mixin glyphicon-headphones-p {
+  &:before {
+    content: "\e035";
+  }
+}
+
+@mixin glyphicon-volume-off-p {
+  &:before {
+    content: "\e036";
+  }
+}
+
+@mixin glyphicon-volume-down-p {
+  &:before {
+    content: "\e037";
+  }
+}
+
+@mixin glyphicon-volume-up-p {
+  &:before {
+    content: "\e038";
+  }
+}
+
+@mixin glyphicon-qrcode-p {
+  &:before {
+    content: "\e039";
+  }
+}
+
+@mixin glyphicon-barcode-p {
+  &:before {
+    content: "\e040";
+  }
+}
+
+@mixin glyphicon-tag-p {
+  &:before {
+    content: "\e041";
+  }
+}
+
+@mixin glyphicon-tags-p {
+  &:before {
+    content: "\e042";
+  }
+}
+
+@mixin glyphicon-book-p {
+  &:before {
+    content: "\e043";
+  }
+}
+
+@mixin glyphicon-bookmark-p {
+  &:before {
+    content: "\e044";
+  }
+}
+
+@mixin glyphicon-print-p {
+  &:before {
+    content: "\e045";
+  }
+}
+
+@mixin glyphicon-camera-p {
+  &:before {
+    content: "\e046";
+  }
+}
+
+@mixin glyphicon-font-p {
+  &:before {
+    content: "\e047";
+  }
+}
+
+@mixin glyphicon-bold-p {
+  &:before {
+    content: "\e048";
+  }
+}
+
+@mixin glyphicon-italic-p {
+  &:before {
+    content: "\e049";
+  }
+}
+
+@mixin glyphicon-text-height-p {
+  &:before {
+    content: "\e050";
+  }
+}
+
+@mixin glyphicon-text-width-p {
+  &:before {
+    content: "\e051";
+  }
+}
+
+@mixin glyphicon-align-left-p {
+  &:before {
+    content: "\e052";
+  }
+}
+
+@mixin glyphicon-align-center-p {
+  &:before {
+    content: "\e053";
+  }
+}
+
+@mixin glyphicon-align-right-p {
+  &:before {
+    content: "\e054";
+  }
+}
+
+@mixin glyphicon-align-justify-p {
+  &:before {
+    content: "\e055";
+  }
+}
+
+@mixin glyphicon-list-p {
+  &:before {
+    content: "\e056";
+  }
+}
+
+@mixin glyphicon-indent-left-p {
+  &:before {
+    content: "\e057";
+  }
+}
+
+@mixin glyphicon-indent-right-p {
+  &:before {
+    content: "\e058";
+  }
+}
+
+@mixin glyphicon-facetime-video-p {
+  &:before {
+    content: "\e059";
+  }
+}
+
+@mixin glyphicon-picture-p {
+  &:before {
+    content: "\e060";
+  }
+}
+
+@mixin glyphicon-map-marker-p {
+  &:before {
+    content: "\e062";
+  }
+}
+
+@mixin glyphicon-adjust-p {
+  &:before {
+    content: "\e063";
+  }
+}
+
+@mixin glyphicon-tint-p {
+  &:before {
+    content: "\e064";
+  }
+}
+
+@mixin glyphicon-edit-p {
+  &:before {
+    content: "\e065";
+  }
+}
+
+@mixin glyphicon-share-p {
+  &:before {
+    content: "\e066";
+  }
+}
+
+@mixin glyphicon-check-p {
+  &:before {
+    content: "\e067";
+  }
+}
+
+@mixin glyphicon-move-p {
+  &:before {
+    content: "\e068";
+  }
+}
+
+@mixin glyphicon-step-backward-p {
+  &:before {
+    content: "\e069";
+  }
+}
+
+@mixin glyphicon-fast-backward-p {
+  &:before {
+    content: "\e070";
+  }
+}
+
+@mixin glyphicon-backward-p {
+  &:before {
+    content: "\e071";
+  }
+}
+
+@mixin glyphicon-play-p {
+  &:before {
+    content: "\e072";
+  }
+}
+
+@mixin glyphicon-pause-p {
+  &:before {
+    content: "\e073";
+  }
+}
+
+@mixin glyphicon-stop-p {
+  &:before {
+    content: "\e074";
+  }
+}
+
+@mixin glyphicon-forward-p {
+  &:before {
+    content: "\e075";
+  }
+}
+
+@mixin glyphicon-fast-forward-p {
+  &:before {
+    content: "\e076";
+  }
+}
+
+@mixin glyphicon-step-forward-p {
+  &:before {
+    content: "\e077";
+  }
+}
+
+@mixin glyphicon-eject-p {
+  &:before {
+    content: "\e078";
+  }
+}
+
+@mixin glyphicon-chevron-left-p {
+  &:before {
+    content: "\e079";
+  }
+}
+
+@mixin glyphicon-chevron-right-p {
+  &:before {
+    content: "\e080";
+  }
+}
+
+@mixin glyphicon-plus-sign-p {
+  &:before {
+    content: "\e081";
+  }
+}
+
+@mixin glyphicon-minus-sign-p {
+  &:before {
+    content: "\e082";
+  }
+}
+
+@mixin glyphicon-remove-sign-p {
+  &:before {
+    content: "\e083";
+  }
+}
+
+@mixin glyphicon-ok-sign-p {
+  &:before {
+    content: "\e084";
+  }
+}
+
+@mixin glyphicon-question-sign-p {
+  &:before {
+    content: "\e085";
+  }
+}
+
+@mixin glyphicon-info-sign-p {
+  &:before {
+    content: "\e086";
+  }
+}
+
+@mixin glyphicon-screenshot-p {
+  &:before {
+    content: "\e087";
+  }
+}
+
+@mixin glyphicon-remove-circle-p {
+  &:before {
+    content: "\e088";
+  }
+}
+
+@mixin glyphicon-ok-circle-p {
+  &:before {
+    content: "\e089";
+  }
+}
+
+@mixin glyphicon-ban-circle-p {
+  &:before {
+    content: "\e090";
+  }
+}
+
+@mixin glyphicon-arrow-left-p {
+  &:before {
+    content: "\e091";
+  }
+}
+
+@mixin glyphicon-arrow-right-p {
+  &:before {
+    content: "\e092";
+  }
+}
+
+@mixin glyphicon-arrow-up-p {
+  &:before {
+    content: "\e093";
+  }
+}
+
+@mixin glyphicon-arrow-down-p {
+  &:before {
+    content: "\e094";
+  }
+}
+
+@mixin glyphicon-share-alt-p {
+  &:before {
+    content: "\e095";
+  }
+}
+
+@mixin glyphicon-resize-full-p {
+  &:before {
+    content: "\e096";
+  }
+}
+
+@mixin glyphicon-resize-small-p {
+  &:before {
+    content: "\e097";
+  }
+}
+
+@mixin glyphicon-exclamation-sign-p {
+  &:before {
+    content: "\e101";
+  }
+}
+
+@mixin glyphicon-gift-p {
+  &:before {
+    content: "\e102";
+  }
+}
+
+@mixin glyphicon-leaf-p {
+  &:before {
+    content: "\e103";
+  }
+}
+
+@mixin glyphicon-fire-p {
+  &:before {
+    content: "\e104";
+  }
+}
+
+@mixin glyphicon-eye-open-p {
+  &:before {
+    content: "\e105";
+  }
+}
+
+@mixin glyphicon-eye-close-p {
+  &:before {
+    content: "\e106";
+  }
+}
+
+@mixin glyphicon-warning-sign-p {
+  &:before {
+    content: "\e107";
+  }
+}
+
+@mixin glyphicon-plane-p {
+  &:before {
+    content: "\e108";
+  }
+}
+
+@mixin glyphicon-calendar-p {
+  &:before {
+    content: "\e109";
+  }
+}
+
+@mixin glyphicon-random-p {
+  &:before {
+    content: "\e110";
+  }
+}
+
+@mixin glyphicon-comment-p {
+  &:before {
+    content: "\e111";
+  }
+}
+
+@mixin glyphicon-magnet-p {
+  &:before {
+    content: "\e112";
+  }
+}
+
+@mixin glyphicon-chevron-up-p {
+  &:before {
+    content: "\e113";
+  }
+}
+
+@mixin glyphicon-chevron-down-p {
+  &:before {
+    content: "\e114";
+  }
+}
+
+@mixin glyphicon-retweet-p {
+  &:before {
+    content: "\e115";
+  }
+}
+
+@mixin glyphicon-shopping-cart-p {
+  &:before {
+    content: "\e116";
+  }
+}
+
+@mixin glyphicon-folder-close-p {
+  &:before {
+    content: "\e117";
+  }
+}
+
+@mixin glyphicon-folder-open-p {
+  &:before {
+    content: "\e118";
+  }
+}
+
+@mixin glyphicon-resize-vertical-p {
+  &:before {
+    content: "\e119";
+  }
+}
+
+@mixin glyphicon-resize-horizontal-p {
+  &:before {
+    content: "\e120";
+  }
+}
+
+@mixin glyphicon-hdd-p {
+  &:before {
+    content: "\e121";
+  }
+}
+
+@mixin glyphicon-bullhorn-p {
+  &:before {
+    content: "\e122";
+  }
+}
+
+@mixin glyphicon-bell-p {
+  &:before {
+    content: "\e123";
+  }
+}
+
+@mixin glyphicon-certificate-p {
+  &:before {
+    content: "\e124";
+  }
+}
+
+@mixin glyphicon-thumbs-up-p {
+  &:before {
+    content: "\e125";
+  }
+}
+
+@mixin glyphicon-thumbs-down-p {
+  &:before {
+    content: "\e126";
+  }
+}
+
+@mixin glyphicon-hand-right-p {
+  &:before {
+    content: "\e127";
+  }
+}
+
+@mixin glyphicon-hand-left-p {
+  &:before {
+    content: "\e128";
+  }
+}
+
+@mixin glyphicon-hand-up-p {
+  &:before {
+    content: "\e129";
+  }
+}
+
+@mixin glyphicon-hand-down-p {
+  &:before {
+    content: "\e130";
+  }
+}
+
+@mixin glyphicon-circle-arrow-right-p {
+  &:before {
+    content: "\e131";
+  }
+}
+
+@mixin glyphicon-circle-arrow-left-p {
+  &:before {
+    content: "\e132";
+  }
+}
+
+@mixin glyphicon-circle-arrow-up-p {
+  &:before {
+    content: "\e133";
+  }
+}
+
+@mixin glyphicon-circle-arrow-down-p {
+  &:before {
+    content: "\e134";
+  }
+}
+
+@mixin glyphicon-globe-p {
+  &:before {
+    content: "\e135";
+  }
+}
+
+@mixin glyphicon-wrench-p {
+  &:before {
+    content: "\e136";
+  }
+}
+
+@mixin glyphicon-tasks-p {
+  &:before {
+    content: "\e137";
+  }
+}
+
+@mixin glyphicon-filter-p {
+  &:before {
+    content: "\e138";
+  }
+}
+
+@mixin glyphicon-briefcase-p {
+  &:before {
+    content: "\e139";
+  }
+}
+
+@mixin glyphicon-fullscreen-p {
+  &:before {
+    content: "\e140";
+  }
+}
+
+@mixin glyphicon-dashboard-p {
+  &:before {
+    content: "\e141";
+  }
+}
+
+@mixin glyphicon-paperclip-p {
+  &:before {
+    content: "\e142";
+  }
+}
+
+@mixin glyphicon-heart-empty-p {
+  &:before {
+    content: "\e143";
+  }
+}
+
+@mixin glyphicon-link-p {
+  &:before {
+    content: "\e144";
+  }
+}
+
+@mixin glyphicon-phone-p {
+  &:before {
+    content: "\e145";
+  }
+}
+
+@mixin glyphicon-pushpin-p {
+  &:before {
+    content: "\e146";
+  }
+}
+
+@mixin glyphicon-usd-p {
+  &:before {
+    content: "\e148";
+  }
+}
+
+@mixin glyphicon-gbp-p {
+  &:before {
+    content: "\e149";
+  }
+}
+
+@mixin glyphicon-sort-p {
+  &:before {
+    content: "\e150";
+  }
+}
+
+@mixin glyphicon-sort-by-alphabet-p {
+  &:before {
+    content: "\e151";
+  }
+}
+
+@mixin glyphicon-sort-by-alphabet-alt-p {
+  &:before {
+    content: "\e152";
+  }
+}
+
+@mixin glyphicon-sort-by-order-p {
+  &:before {
+    content: "\e153";
+  }
+}
+
+@mixin glyphicon-sort-by-order-alt-p {
+  &:before {
+    content: "\e154";
+  }
+}
+
+@mixin glyphicon-sort-by-attributes-p {
+  &:before {
+    content: "\e155";
+  }
+}
+
+@mixin glyphicon-sort-by-attributes-alt-p {
+  &:before {
+    content: "\e156";
+  }
+}
+
+@mixin glyphicon-unchecked-p {
+  &:before {
+    content: "\e157";
+  }
+}
+
+@mixin glyphicon-expand-p {
+  &:before {
+    content: "\e158";
+  }
+}
+
+@mixin glyphicon-collapse-down-p {
+  &:before {
+    content: "\e159";
+  }
+}
+
+@mixin glyphicon-collapse-up-p {
+  &:before {
+    content: "\e160";
+  }
+}
+
+@mixin glyphicon-log-in-p {
+  &:before {
+    content: "\e161";
+  }
+}
+
+@mixin glyphicon-flash-p {
+  &:before {
+    content: "\e162";
+  }
+}
+
+@mixin glyphicon-log-out-p {
+  &:before {
+    content: "\e163";
+  }
+}
+
+@mixin glyphicon-new-window-p {
+  &:before {
+    content: "\e164";
+  }
+}
+
+@mixin glyphicon-record-p {
+  &:before {
+    content: "\e165";
+  }
+}
+
+@mixin glyphicon-save-p {
+  &:before {
+    content: "\e166";
+  }
+}
+
+@mixin glyphicon-open-p {
+  &:before {
+    content: "\e167";
+  }
+}
+
+@mixin glyphicon-saved-p {
+  &:before {
+    content: "\e168";
+  }
+}
+
+@mixin glyphicon-import-p {
+  &:before {
+    content: "\e169";
+  }
+}
+
+@mixin glyphicon-export-p {
+  &:before {
+    content: "\e170";
+  }
+}
+
+@mixin glyphicon-send-p {
+  &:before {
+    content: "\e171";
+  }
+}
+
+@mixin glyphicon-floppy-disk-p {
+  &:before {
+    content: "\e172";
+  }
+}
+
+@mixin glyphicon-floppy-saved-p {
+  &:before {
+    content: "\e173";
+  }
+}
+
+@mixin glyphicon-floppy-remove-p {
+  &:before {
+    content: "\e174";
+  }
+}
+
+@mixin glyphicon-floppy-save-p {
+  &:before {
+    content: "\e175";
+  }
+}
+
+@mixin glyphicon-floppy-open-p {
+  &:before {
+    content: "\e176";
+  }
+}
+
+@mixin glyphicon-credit-card-p {
+  &:before {
+    content: "\e177";
+  }
+}
+
+@mixin glyphicon-transfer-p {
+  &:before {
+    content: "\e178";
+  }
+}
+
+@mixin glyphicon-cutlery-p {
+  &:before {
+    content: "\e179";
+  }
+}
+
+@mixin glyphicon-header-p {
+  &:before {
+    content: "\e180";
+  }
+}
+
+@mixin glyphicon-compressed-p {
+  &:before {
+    content: "\e181";
+  }
+}
+
+@mixin glyphicon-earphone-p {
+  &:before {
+    content: "\e182";
+  }
+}
+
+@mixin glyphicon-phone-alt-p {
+  &:before {
+    content: "\e183";
+  }
+}
+
+@mixin glyphicon-tower-p {
+  &:before {
+    content: "\e184";
+  }
+}
+
+@mixin glyphicon-stats-p {
+  &:before {
+    content: "\e185";
+  }
+}
+
+@mixin glyphicon-sd-video-p {
+  &:before {
+    content: "\e186";
+  }
+}
+
+@mixin glyphicon-hd-video-p {
+  &:before {
+    content: "\e187";
+  }
+}
+
+@mixin glyphicon-subtitles-p {
+  &:before {
+    content: "\e188";
+  }
+}
+
+@mixin glyphicon-sound-stereo-p {
+  &:before {
+    content: "\e189";
+  }
+}
+
+@mixin glyphicon-sound-dolby-p {
+  &:before {
+    content: "\e190";
+  }
+}
+
+@mixin glyphicon-sound-5-1-p {
+  &:before {
+    content: "\e191";
+  }
+}
+
+@mixin glyphicon-sound-6-1-p {
+  &:before {
+    content: "\e192";
+  }
+}
+
+@mixin glyphicon-sound-7-1-p {
+  &:before {
+    content: "\e193";
+  }
+}
+
+@mixin glyphicon-copyright-mark-p {
+  &:before {
+    content: "\e194";
+  }
+}
+
+@mixin glyphicon-registration-mark-p {
+  &:before {
+    content: "\e195";
+  }
+}
+
+@mixin glyphicon-cloud-download-p {
+  &:before {
+    content: "\e197";
+  }
+}
+
+@mixin glyphicon-cloud-upload-p {
+  &:before {
+    content: "\e198";
+  }
+}
+
+@mixin glyphicon-tree-conifer-p {
+  &:before {
+    content: "\e199";
+  }
+}
+
+@mixin glyphicon-tree-deciduous-p {
+  &:before {
+    content: "\e200";
+  }
+}
+
+@mixin glyphicon-cd-p {
+  &:before {
+    content: "\e201";
+  }
+}
+
+@mixin glyphicon-save-file-p {
+  &:before {
+    content: "\e202";
+  }
+}
+
+@mixin glyphicon-open-file-p {
+  &:before {
+    content: "\e203";
+  }
+}
+
+@mixin glyphicon-level-up-p {
+  &:before {
+    content: "\e204";
+  }
+}
+
+@mixin glyphicon-copy-p {
+  &:before {
+    content: "\e205";
+  }
+}
+
+@mixin glyphicon-paste-p {
+  &:before {
+    content: "\e206";
+  }
+}
+
+@mixin glyphicon-alert-p {
+  &:before {
+    content: "\e209";
+  }
+}
+
+@mixin glyphicon-equalizer-p {
+  &:before {
+    content: "\e210";
+  }
+}
+
+@mixin glyphicon-king-p {
+  &:before {
+    content: "\e211";
+  }
+}
+
+@mixin glyphicon-queen-p {
+  &:before {
+    content: "\e212";
+  }
+}
+
+@mixin glyphicon-pawn-p {
+  &:before {
+    content: "\e213";
+  }
+}
+
+@mixin glyphicon-bishop-p {
+  &:before {
+    content: "\e214";
+  }
+}
+
+@mixin glyphicon-knight-p {
+  &:before {
+    content: "\e215";
+  }
+}
+
+@mixin glyphicon-baby-formula-p {
+  &:before {
+    content: "\e216";
+  }
+}
+
+@mixin glyphicon-tent-p {
+  &:before {
+    content: "\26fa";
+  }
+}
+
+@mixin glyphicon-blackboard-p {
+  &:before {
+    content: "\e218";
+  }
+}
+
+@mixin glyphicon-bed-p {
+  &:before {
+    content: "\e219";
+  }
+}
+
+@mixin glyphicon-apple-p {
+  &:before {
+    content: "\f8ff";
+  }
+}
+
+@mixin glyphicon-erase-p {
+  &:before {
+    content: "\e221";
+  }
+}
+
+@mixin glyphicon-hourglass-p {
+  &:before {
+    content: "\231b";
+  }
+}
+
+@mixin glyphicon-lamp-p {
+  &:before {
+    content: "\e223";
+  }
+}
+
+@mixin glyphicon-duplicate-p {
+  &:before {
+    content: "\e224";
+  }
+}
+
+@mixin glyphicon-piggy-bank-p {
+  &:before {
+    content: "\e225";
+  }
+}
+
+@mixin glyphicon-scissors-p {
+  &:before {
+    content: "\e226";
+  }
+}
+
+@mixin glyphicon-bitcoin-p {
+  &:before {
+    content: "\e227";
+  }
+}
+
+@mixin glyphicon-btc-p {
+  &:before {
+    content: "\e227";
+  }
+}
+
+@mixin glyphicon-xbt-p {
+  &:before {
+    content: "\e227";
+  }
+}
+
+@mixin glyphicon-yen-p {
+  &:before {
+    content: "\00a5";
+  }
+}
+
+@mixin glyphicon-jpy-p {
+  &:before {
+    content: "\00a5";
+  }
+}
+
+@mixin glyphicon-ruble-p {
+  &:before {
+    content: "\20bd";
+  }
+}
+
+@mixin glyphicon-rub-p {
+  &:before {
+    content: "\20bd";
+  }
+}
+
+@mixin glyphicon-scale-p {
+  &:before {
+    content: "\e230";
+  }
+}
+
+@mixin glyphicon-ice-lolly-p {
+  &:before {
+    content: "\e231";
+  }
+}
+
+@mixin glyphicon-ice-lolly-tasted-p {
+  &:before {
+    content: "\e232";
+  }
+}
+
+@mixin glyphicon-education-p {
+  &:before {
+    content: "\e233";
+  }
+}
+
+@mixin glyphicon-option-horizontal-p {
+  &:before {
+    content: "\e234";
+  }
+}
+
+@mixin glyphicon-option-vertical-p {
+  &:before {
+    content: "\e235";
+  }
+}
+
+@mixin glyphicon-menu-hamburger-p {
+  &:before {
+    content: "\e236";
+  }
+}
+
+@mixin glyphicon-modal-window-p {
+  &:before {
+    content: "\e237";
+  }
+}
+
+@mixin glyphicon-oil-p {
+  &:before {
+    content: "\e238";
+  }
+}
+
+@mixin glyphicon-grain-p {
+  &:before {
+    content: "\e239";
+  }
+}
+
+@mixin glyphicon-sunglasses-p {
+  &:before {
+    content: "\e240";
+  }
+}
+
+@mixin glyphicon-text-size-p {
+  &:before {
+    content: "\e241";
+  }
+}
+
+@mixin glyphicon-text-color-p {
+  &:before {
+    content: "\e242";
+  }
+}
+
+@mixin glyphicon-text-background-p {
+  &:before {
+    content: "\e243";
+  }
+}
+
+@mixin glyphicon-object-align-top-p {
+  &:before {
+    content: "\e244";
+  }
+}
+
+@mixin glyphicon-object-align-bottom-p {
+  &:before {
+    content: "\e245";
+  }
+}
+
+@mixin glyphicon-object-align-horizontal-p {
+  &:before {
+    content: "\e246";
+  }
+}
+
+@mixin glyphicon-object-align-left-p {
+  &:before {
+    content: "\e247";
+  }
+}
+
+@mixin glyphicon-object-align-vertical-p {
+  &:before {
+    content: "\e248";
+  }
+}
+
+@mixin glyphicon-object-align-right-p {
+  &:before {
+    content: "\e249";
+  }
+}
+
+@mixin glyphicon-triangle-right-p {
+  &:before {
+    content: "\e250";
+  }
+}
+
+@mixin glyphicon-triangle-left-p {
+  &:before {
+    content: "\e251";
+  }
+}
+
+@mixin glyphicon-triangle-bottom-p {
+  &:before {
+    content: "\e252";
+  }
+}
+
+@mixin glyphicon-triangle-top-p {
+  &:before {
+    content: "\e253";
+  }
+}
+
+@mixin glyphicon-console-p {
+  &:before {
+    content: "\e254";
+  }
+}
+
+@mixin glyphicon-superscript-p {
+  &:before {
+    content: "\e255";
+  }
+}
+
+@mixin glyphicon-subscript-p {
+  &:before {
+    content: "\e256";
+  }
+}
+
+@mixin glyphicon-menu-left-p {
+  &:before {
+    content: "\e257";
+  }
+}
+
+@mixin glyphicon-menu-right-p {
+  &:before {
+    content: "\e258";
+  }
+}
+
+@mixin glyphicon-menu-down-p {
+  &:before {
+    content: "\e259";
+  }
+}
+
+@mixin glyphicon-menu-up-p {
+  &:before {
+    content: "\e260";
+  }
+}

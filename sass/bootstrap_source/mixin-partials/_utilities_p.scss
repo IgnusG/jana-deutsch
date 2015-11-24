@@ -1,0 +1,44 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+@mixin clearfix-p {
+  @include clearfix;
+}
+
+@mixin center-block-p {
+  @include center-block;
+}
+
+@mixin pull-right-p {
+  float: right !important;
+}
+
+@mixin pull-left-p {
+  float: left !important;
+}
+
+@mixin hide-p {
+  display: none !important;
+}
+
+@mixin show-p {
+  display: block !important;
+}
+
+@mixin invisible-p {
+  visibility: hidden;
+}
+
+@mixin text-hide-p {
+  @include text-hide;
+}
+
+@mixin hidden-p {
+  display: none !important;
+}
+
+@mixin affix-p {
+  position: fixed;
+}

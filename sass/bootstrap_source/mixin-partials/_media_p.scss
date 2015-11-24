@@ -1,0 +1,35 @@
+/*
+ * Lovingly crafted by @simplCoding
+ * Copyright (c) 2015
+ */
+
+@mixin media-body-p {
+  width: 10000px;
+}
+
+@mixin media-object-p {
+  display: block;
+
+  // Fix collapse in webkit from max-width: 100% and display: table-cell.
+  &.img-thumbnail {
+    max-width: none;
+  }
+}
+
+@mixin media-middle-p {
+  vertical-align: middle;
+}
+
+@mixin media-bottom-p {
+  vertical-align: bottom;
+}
+
+@mixin media-heading-p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+@mixin media-list-p {
+  padding-left: 0;
+  list-style: none;
+}
