@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+  ~ Lovingly crafted by @simplCoding
+  ~ Copyright (c) 2015
+  -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jana Kovacs</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <!-- Angular material dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-aria.min.js"></script>
+    <script src="https://cdn.rawgit.com/IgnusG/ngSmoothScroll/master/dist/angular-smooth-scroll.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.0/angular-material.min.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    };
+            i[r].l = 1 * new Date();
+            a = s.createElement(o);
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-55600169-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body ng-app="coreApp">
+<div class="content" id="content">
+    <header class="card">
+        <div class="padding-container">
+            <div class="profile-container" ng-controller="DescriptionCtrl as info">
+                <img class="profile-image" src="images/profile-image.jpg" alt="Jana Kovacs">
+
+                <div class="about-toggle" ng-class="{'highlight': info.show}"
+                     scroll-to="about"
+                     offset="30"
+                     container-id="content"
+                     callback-before="info.showAbout()"
+                     ng-mouseenter="info.disableAnimations()"
+                     ng-mouseleave="info.enableAnimations()">
+                    <img class="profile-image" src="images/profile-image-blurred.jpg"
+                         alt="Jana Kovacs">
+                    <md-icon class="contact" ng-class="{'bounce': info.bounceIcon}"
+                             md-svg-src="../images/icons/contact.svg"></md-icon>
+                </div>
+                <img class="logo" src="images/logo.png" alt="Deutschunterricht">
+            </div>
+
+            <div class="text first">Deutsch Effektiv & Erfolgreich</div>
+
+            <div class="text bold">Herzlich Willkommen auf meiner Webseite! Hier finden Sie alle wichtigen Informationen
+                zu allen Deutschkursen
+            </div>
+
+            <div class="text">Möchten Sie die Sprache im gesellschaftlichen und beruflichen Leben wirksam und flexibel
+                gebrauchen?
+            </div>
+            <div class="text">Und möchten Sie sich klar, strukturiert und ausführlich zu komplexen Sachverhalten äußern
+                können?
+            </div>
+            <div class="text">Ich helfe Ihnen sehr gerne dabei.</div>
+        </div>
+    </header>
+    <!--TODO: Add short card with Contact on it that can be expanded (zippy style) || current display icon can co-exist-->
+    <div class="about card" id="about" ng-show="displayAboutCard">
+        <div class="contact">
+            <div class="phone" svg-icon="../images/icons/phone.svg"><a ng-href="tel:{{phone}}" ng-bind="phone"></a>
+            </div>
+            <div class="email" svg-icon="../images/icons/mail.svg"><a
+                    href="mailto:contact@jana-deutsch.com?Subject=Jana Kovacs"
+                    target="_top">contact@jana-deutsch.com</a></div>
+        </div>
+        <div class="padding-container">
+            <div class="text first">
+                Kurz über mich
+            </div>
+            <div class="natural-margin">
+                Studium im Fach Deutsch und deutsche Literatur (Phare) an der Universität Konstantin Philosoph, Nitra,
+                mit Abschluss: Magister
+            </div>
+            <div>ESM, Altötting, Deutschland <a href="http://esm-altoetting.de/">http://esm-altoetting.de/</a></div>
+            <div class="natural-margin">
+                Selbständige Tätigkeit als Deutschlehrerin bei verschiedenen Firmen:
+                <span><a target="_blank" href="http://sk.volkswagen.sk/sk/Podnik/historia_vw_sk.html">VW Slovakia
+                    (Sprachschule Proplusco)</a></span>,
+                <span><a target="_blank" href="http://www8.hp.com/sk/sk/hp-information/index.html">Hewlett-Packard
+                    Slovakia, s.r.o. (ENGLISH SUCCESS, s.r.o.)</a></span>
+            </div>
+            <div class="natural-margin">
+                Honoratlehrkraft
+                <span><a target="_blank" href="http://www.goethe.de/ins/sk/bra/uun/deindex.htm">Goethe Institut
+                    Bratislava</a></span>
+            </div>
+            <div class="natural-margin">
+                Selbstständige Tätigkeit als Übersetzerin bei
+                <span class="link"><a target="_blank" href="http://www.sdl.com/aboutus/aboutsdl/vision-mission.html">SDL
+                    CZ s.r.o.</a></span>
+                ; Arbeitsinstrument Trados 2014
+            </div>
+            <div>
+                <span>Fortbildungen und Qualifikationen:</span>
+                <ul>
+                    <li>Goethe-Zertifikat C2 / ZOP (2000)</li>
+                </ul>
+                <span>Prüferzertifikate:</span>
+                <ul>
+                    <li>Goethe-Zertifikat C2 Modul Sprechen (2015)</li>
+                    <li>Goethe-Zertifikat C2 Modul Schreiben (2013)</li>
+                    <li>Goethe-Zertifikat C1 (2012)</li>
+                    <li>Goethe-Zertifikat B2 (2015)</li>
+                    <li>Goethe-Zertifikat B1: Zertifikat Deutsch / Zertifikat Deutsch für Jugendliche (2013)</li>
+                    <li>Goethe-Zertifikat A2: Start Deutsch 2 (2012)</li>
+                    <li>Goethe-Zertifikat A1: Start Deutsch 1 (2012)</li>
+                    <li>Goethe-Zertifikat A2: Fit in Deutsch 2 (2012)</li>
+                    <li>Goethe-Zertifikat A1: Fit in Deutsch 1 (2012)</li>
+                </ul>
+                <span>Seminare:</span>
+                <ul>
+                    <li>Fortbildung zum Hybriden Unterricht – Einsatz von iPads im Unterricht (2015)</li>
+                    <li>„Unterrichtsplanung und Unterrichtsgestaltung“ mit Annegret Schmidjell (2014)</li>
+                    <li>„Die vier Säulen optimalen Lernens“ mit Dorothee Thommes (2013)</li>
+                    <li>Diverse Weiterbildungsseminare</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="introduction card">
+        <!--TODO: Replace regular elements with paragraphs!-->
+        <div class="padding-container">
+            <div class="text first">Mein Angebot:</div>
+            <div class="flex-container">
+                <div class="flex-element">
+                    <span>Im Unterricht</span>
+                    <ul>
+                        <li>ausführliche Unterrichtsunterlagen</li>
+                        <li>intensive Vermittlung von Wortschatz/Sprache/Kultur</li>
+                        <li>berufsbegleitender Aspekt</li>
+                    </ul>
+                </div>
+                <div class="flex-element">
+                    <span>Sprachkurse</span>
+                    <ul>
+                        <li>Gruppenkurse</li>
+                        <li>Einzelunterricht und Konversationskurse</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="natural-margin">Ihren Wünschen zugeschnittener Unterricht: Der Unterricht passt sich Ihrem
+                Lernstil, Ihren Interessen und Ihren Zielen an
+            </div>
+
+            <span>Einstufung und Progressüberprüfung</span>
+            <ul>
+                <li>Progressüberprüfung wird je nach Bedarf, in der Regel aber nach jeder abgeschlossenen Sprachstufe
+                    durchgeführt
+                </li>
+                <li>Einstufung verläuft auch in zwei Schritten - schriftlich und mündlich - und wird von den externen
+                    Sprachprüfern
+                    unter Zusammenarbeit mit mir durchgeführt
+                </li>
+            </ul>
+
+            <div class="flex-container">
+                <div class="flex-element">
+                    <span>Vorbereitungskurse</span>
+                    <ul>
+                        <li>Vorbereitungskurse auf die Goethe Zertifikate aller Stufen</li>
+                    </ul>
+                </div>
+                <div class="flex-element">
+                    <span>Freude im Unterricht und natürlich viel Spaß am Lernen</span>
+                    <ul>
+                        <li>Lernen Sie über die Dinge reden, die Sie wirklich interessieren!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="card">
+        <span class="copyright">Copyright &copy; 2015 - Alle Rechte vorbehalten</span>
+
+        <div class="referrals">
+            <a href="http://api.hostinger.sk/redir/4547983" target="_blank">
+                <img src="images/hostinger.png" alt="Hostinger" class="hostinger">
+            </a>
+            <a href="https://www.linkedin.com/in/jonatanjuhas" target="_blank">
+                <img src="images/simplCoding.png" alt="simplCoding" class="simplCoding">
+            </a>
+        </div>
+    </footer>
+</div>
+<script src="scripts/description.js"></script>
+<script src="scripts/utilities.js"></script>
+<script>
+    (function (window) {
+        var app = angular.module("coreApp", ["ngMaterial", "smoothScroll", "description", "utilities"]);
+        app.run(["$rootScope", function ($rootScope) {
+            $rootScope.displayAboutCard = false;
+            $rootScope.phone = "+421 905 747 730";
+        }])
+    })(window);
+</script>
+</body>
+</html>

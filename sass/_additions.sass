@@ -1,0 +1,42 @@
+@import bootstrap_source/mixin-partials/mixins_p
+
+=entire-display
+  width: 100vw
+  height: 100vh
+
+=center-block-inline
+  margin-left: auto
+  margin-right: auto
+
+=white-correction($hardness: 1, $use-rounded-borders: false)
+  background-color: rgba(0, 0, 0, 0.09*$hardness) !important
+  box-shadow: rgba(0, 0, 0, 0.17*$hardness) 0 0 30px 1px
+  @if $use-rounded-borders
+    +border-radius(23%)
+
+=position($values...)
+  $position-values: top, right, bottom, left
+  @for $i from 1 to length($values)+1
+    #{nth($position-values, $i)}: nth($values, $i)
+
+// General class sets
+.cover
+  +entire-display
+  background: rgba(0, 0, 0, 0.41)
+  position: absolute
+  top: 0
+  left: 0
+
+.not-bold
+  font-weight: normal
+
+.bold
+  font-weight: bold
+
+.natural-margin
+  margin-top: 12px
+  margin-bottom: 12px
+
+.flex-container
+  +display-flex()
+  +flex-wrap(wrap)

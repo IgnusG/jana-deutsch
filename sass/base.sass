@@ -1,0 +1,22 @@
+@import compass
+@import bootstrap-compass
+
+// Bootstrap setup
+@import bootstrap/normalize
+
+=font-face($family, $path, $svg, $weight: normal, $style: normal)
+  @font-face
+    font-family: $family
+    src: url('#{$path}.eot')
+    src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$svg}') format('svg')
+    font-weight: $weight
+    font-style: $style
+
++font-face(bariol, '../fonts/bariol_light-webfont', bariol_light-webfont, 200)
++font-face(bariol, '../fonts/bariol_bold-webfont', bariol_bold-webfont, bold)
++font-face(bariol, '../fonts/bariol_regular-webfont', bariol_regular-webfont)
+
+html
+  // Fix for inconsistent letter size in Chrome
+  font-size: 18px
+  font-family: bariol, sans-serif
