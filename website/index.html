@@ -65,19 +65,14 @@
 </head>
 
 <body ng-app="coreApp">
-<div class="content" id="content">
+
+<div class="content hasLvlTransition" id="content" ng-class="{'level-down': hideContentCards}">
     <header class="card">
         <div class="padding-container">
             <div class="profile-container" ng-controller="DescriptionCtrl as info">
                 <img class="profile-image" src="images/profile-image.jpg" alt="Jana Kovacs">
 
-                <div class="about-toggle" ng-class="{'highlight': info.show}"
-                     scroll-to="about"
-                     offset="30"
-                     container-id="content"
-                     callback-before="info.showAbout()"
-                     ng-mouseenter="info.disableAnimations()"
-                     ng-mouseleave="info.enableAnimations()">
+                <div class="about-toggle" ng-class="{'highlight': info.show}" ng-click="openAboutCard()">
                     <img class="profile-image" src="images/profile-image-blurred.jpg"
                          alt="Jana Kovacs">
                     <md-icon class="contact" ng-class="{'bounce': info.bounceIcon}"
@@ -101,67 +96,20 @@
             <div class="text">Ich helfe Ihnen sehr gerne dabei.</div>
         </div>
     </header>
-    <!--TODO: Add short card with Contact on it that can be expanded (zippy style) || current display icon can co-exist-->
-    <div class="about card" id="about" ng-show="displayAboutCard">
-        <div class="contact">
-            <div class="phone" svg-icon="../images/icons/phone.svg"><a ng-href="tel:{{phone}}" ng-bind="phone"></a>
+    <div class="contact card" id="contact" ng-click="openAboutCard()">
+        <div class="contact-info">
+            <div stop-click-propagation class="phone">
+                <div svg-icon="../images/icons/phone.svg">
+                    <a ng-href="tel:{{phone}}" ng-bind="phone"></a>
+                </div>
             </div>
-            <div class="email" svg-icon="../images/icons/mail.svg"><a
-                    href="mailto:contact@jana-deutsch.com?Subject=Jana Kovacs"
-                    target="_top">contact@jana-deutsch.com</a></div>
-        </div>
-        <div class="padding-container">
-            <div class="text first">
-                Kurz über mich
+            <div stop-click-propagation class="email">
+                <div svg-icon="../images/icons/mail.svg">
+                    <a href="mailto:contact@jana-deutsch.com?Subject=Jana Kovacs"
+                       target="_top">contact@jana-deutsch.com</a>
+                </div>
             </div>
-            <div class="natural-margin">
-                Studium im Fach Deutsch und deutsche Literatur (Phare) an der Universität Konstantin Philosoph, Nitra,
-                mit Abschluss: Magister
-            </div>
-            <div>ESM, Altötting, Deutschland <a href="http://esm-altoetting.de/">http://esm-altoetting.de/</a></div>
-            <div class="natural-margin">
-                Selbständige Tätigkeit als Deutschlehrerin bei verschiedenen Firmen:
-                <span><a target="_blank" href="http://sk.volkswagen.sk/sk/Podnik/historia_vw_sk.html">VW Slovakia
-                    (Sprachschule Proplusco)</a></span>,
-                <span><a target="_blank" href="http://www8.hp.com/sk/sk/hp-information/index.html">Hewlett-Packard
-                    Slovakia, s.r.o. (ENGLISH SUCCESS, s.r.o.)</a></span>
-            </div>
-            <div class="natural-margin">
-                Honoratlehrkraft
-                <span><a target="_blank" href="http://www.goethe.de/ins/sk/bra/uun/deindex.htm">Goethe Institut
-                    Bratislava</a></span>
-            </div>
-            <div class="natural-margin">
-                Selbstständige Tätigkeit als Übersetzerin bei
-                <span class="link"><a target="_blank" href="http://www.sdl.com/aboutus/aboutsdl/vision-mission.html">SDL
-                    CZ s.r.o.</a></span>
-                ; Arbeitsinstrument Trados 2014
-            </div>
-            <div>
-                <span>Fortbildungen und Qualifikationen:</span>
-                <ul>
-                    <li>Goethe-Zertifikat C2 / ZOP (2000)</li>
-                </ul>
-                <span>Prüferzertifikate:</span>
-                <ul>
-                    <li>Goethe-Zertifikat C2 Modul Sprechen (2015)</li>
-                    <li>Goethe-Zertifikat C2 Modul Schreiben (2013)</li>
-                    <li>Goethe-Zertifikat C1 (2012)</li>
-                    <li>Goethe-Zertifikat B2 (2015)</li>
-                    <li>Goethe-Zertifikat B1: Zertifikat Deutsch / Zertifikat Deutsch für Jugendliche (2013)</li>
-                    <li>Goethe-Zertifikat A2: Start Deutsch 2 (2012)</li>
-                    <li>Goethe-Zertifikat A1: Start Deutsch 1 (2012)</li>
-                    <li>Goethe-Zertifikat A2: Fit in Deutsch 2 (2012)</li>
-                    <li>Goethe-Zertifikat A1: Fit in Deutsch 1 (2012)</li>
-                </ul>
-                <span>Seminare:</span>
-                <ul>
-                    <li>Fortbildung zum Hybriden Unterricht – Einsatz von iPads im Unterricht (2015)</li>
-                    <li>„Unterrichtsplanung und Unterrichtsgestaltung“ mit Annegret Schmidjell (2014)</li>
-                    <li>„Die vier Säulen optimalen Lernens“ mit Dorothee Thommes (2013)</li>
-                    <li>Diverse Weiterbildungsseminare</li>
-                </ul>
-            </div>
+            <div class="about-me">zu meiner Person</div>
         </div>
     </div>
     <div class="introduction card">
@@ -220,23 +168,110 @@
         <span class="copyright">Copyright &copy; 2015 - Alle Rechte vorbehalten</span>
 
         <div class="referrals">
-            <a href="http://api.hostinger.sk/redir/4547983" target="_blank">
+            <a href="http://api.hostinger.sk/redir/4547983" target="_blank" class="no-border">
                 <img src="images/hostinger.png" alt="Hostinger" class="hostinger">
             </a>
-            <a href="https://www.linkedin.com/in/jonatanjuhas" target="_blank">
+            <a href="https://www.linkedin.com/in/jonatanjuhas" target="_blank" class="no-border">
                 <img src="images/simplCoding.png" alt="simplCoding" class="simplCoding">
             </a>
         </div>
     </footer>
 </div>
+
+<div class="overlay hasLvlTransition" id="overlay" ng-show="showAboutCard" ng-class="{'level-up': !displayAboutCard}"
+     ng-click="closeAboutCard()">
+    <div class="card about" id="about">
+        <div class="padding-container">
+            <div class="text first">
+                Kurz über mich
+            </div>
+            <div class="natural-margin">
+                Studium im Fach Deutsch und deutsche Literatur (Phare) an der Universität Konstantin Philosoph, Nitra,
+                mit Abschluss: Magister
+            </div>
+            <div>ESM, Altötting, Deutschland <a href="http://esm-altoetting.de/">http://esm-altoetting.de/</a></div>
+            <div class="natural-margin">
+                Selbständige Tätigkeit als Deutschlehrerin bei verschiedenen Firmen:
+                <span><a target="_blank" href="http://sk.volkswagen.sk/sk/Podnik/historia_vw_sk.html">VW Slovakia
+                    (Sprachschule Proplusco)</a></span>,
+                <span><a target="_blank" href="http://www8.hp.com/sk/sk/hp-information/index.html">Hewlett-Packard
+                    Slovakia, s.r.o. (ENGLISH SUCCESS, s.r.o.)</a></span>
+            </div>
+            <div class="natural-margin">
+                Honoratlehrkraft
+                <span><a target="_blank" href="http://www.goethe.de/ins/sk/bra/uun/deindex.htm">Goethe Institut
+                    Bratislava</a></span>
+            </div>
+            <div class="natural-margin">
+                Selbstständige Tätigkeit als Übersetzerin bei
+                <span class="link"><a target="_blank" href="http://www.sdl.com/aboutus/aboutsdl/vision-mission.html">SDL
+                    CZ s.r.o.</a></span>
+                ; Arbeitsinstrument Trados 2014
+            </div>
+            <div>
+                <span>Fortbildungen und Qualifikationen:</span>
+                <ul>
+                    <li>Goethe-Zertifikat C2 / ZOP (2000)</li>
+                </ul>
+                <span>Prüferzertifikate:</span>
+                <ul>
+                    <li>Goethe-Zertifikat C2 Modul Sprechen (2015)</li>
+                    <li>Goethe-Zertifikat C2 Modul Schreiben (2013)</li>
+                    <li>Goethe-Zertifikat C1 (2012)</li>
+                    <li>Goethe-Zertifikat B2 (2015)</li>
+                    <li>Goethe-Zertifikat B1: Zertifikat Deutsch / Zertifikat Deutsch für Jugendliche (2013)</li>
+                    <li>Goethe-Zertifikat A2: Start Deutsch 2 (2012)</li>
+                    <li>Goethe-Zertifikat A1: Start Deutsch 1 (2012)</li>
+                    <li>Goethe-Zertifikat A2: Fit in Deutsch 2 (2012)</li>
+                    <li>Goethe-Zertifikat A1: Fit in Deutsch 1 (2012)</li>
+                </ul>
+                <span>Seminare:</span>
+                <ul>
+                    <li>Fortbildung zum Hybriden Unterricht – Einsatz von iPads im Unterricht (2015)</li>
+                    <li>„Unterrichtsplanung und Unterrichtsgestaltung“ mit Annegret Schmidjell (2014)</li>
+                    <li>„Die vier Säulen optimalen Lernens“ mit Dorothee Thommes (2013)</li>
+                    <li>Diverse Weiterbildungsseminare</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="scripts/description.js"></script>
 <script src="scripts/utilities.js"></script>
 <script>
     (function (window) {
         var app = angular.module("coreApp", ["ngMaterial", "smoothScroll", "description", "utilities"]);
-        app.run(["$rootScope", function ($rootScope) {
-            $rootScope.displayAboutCard = false;
+        app.run(["$rootScope", "$timeout", function ($rootScope, $timeout) {
             $rootScope.phone = "+421 905 747 730";
+
+            $rootScope.hideContentCards = false;
+            $rootScope.showAboutCard = false;
+            $rootScope.displayAboutCard = false;
+
+            $rootScope.openAboutCard = function () {
+                $rootScope.hideContentCards = true;
+
+                $timeout(function () {
+                    $rootScope.showAboutCard = true;
+                }, 100).then(function () {
+                    return $timeout(function () {
+                        $rootScope.displayAboutCard = true;
+                    }, 0)
+                });
+            };
+
+            $rootScope.closeAboutCard = function () {
+                $rootScope.displayAboutCard = false;
+
+                $timeout(function () {
+                    $rootScope.hideContentCards = false;
+                }, 100).then(function () {
+                    return $timeout(function () {
+                        $rootScope.showAboutCard = false;
+                    }, 200)
+                });
+            }
         }])
     })(window);
 </script>
