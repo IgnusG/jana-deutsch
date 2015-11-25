@@ -16,3 +16,11 @@ util.directive("svgIcon", [function () {
         template: "<div class='svg-icon'><md-icon md-svg-src=\'{{svgIcon}}\'></md-icon><span ng-transclude></span></div>"
     }
 }]);
+
+util.directive("stopClickPropagation", [function () {
+    return {
+        restrict: "A",
+        transclude: true,
+        template: "<div ng-click='$event.stopPropagation()' ng-transclude></div>"
+    }
+}]);
