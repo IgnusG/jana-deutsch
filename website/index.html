@@ -217,8 +217,9 @@
         </div>
     </div>
     <footer class="card">
-        <span class="copyright">Copyright &copy; 2015 - Alle Rechte vorbehalten</span>
-
+        <div class="copyright">Copyright &copy; 2015 - Alle Rechte vorbehalten</div>
+        <!--DEV: iOS Fix: padding and margins cause width overflows on display flex-->
+        <div class="divider"></div>
         <div class="referrals">
             <a href="http://api.hostinger.sk/redir/4547983" target="_blank">
                 <img src="images/hostinger.png" alt="Hostinger" class="hostinger">
@@ -227,6 +228,9 @@
                 <img src="images/simplCoding.png" alt="simplCoding" class="simplCoding">
             </a>
         </div>
+        <!--TODO: iOS Bug: display flex seems to ignore this divider and pushes elements over the edge to the right-->
+        <!--QuickFix: overflow-x set to hidden-->
+        <div class="divider"></div>
     </footer>
 </div>
 <script src="scripts/description.js"></script>
