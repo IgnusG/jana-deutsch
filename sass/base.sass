@@ -20,3 +20,12 @@ html
   // Fix for inconsistent letter size in Chrome
   font-size: 18px
   font-family: bariol, sans-serif
+
+a
+  text-decoration: none
+  color: rgba(0, 0, 0, .87)
+  &:not(.no-border)
+    border-bottom: 1px solid rgba(0, 0, 0, .87)
+
+*[role="button"]
+  outline: none
