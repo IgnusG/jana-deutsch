@@ -177,10 +177,9 @@
         </div>
     </footer>
 </div>
-
-<div class="overlay hasLvlTransition" id="overlay" ng-show="showAboutCard" ng-class="{'level-up': !displayAboutCard}"
-     ng-click="closeAboutCard()">
+<div class="overlay hasLvlTransition" id="overlay" ng-show="showAboutCard" ng-class="{'level-up': !displayAboutCard}">
     <div class="card about" id="about">
+        <div class="close" svg-icon="../images/icons/close.svg" ng-click="closeAboutCard()"></div>
         <div class="padding-container">
             <div class="text first">
                 Kurz über mich

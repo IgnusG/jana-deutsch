@@ -4,7 +4,6 @@
 
 @import base
 @import additions
-@import angular-modules
 
 // Import mixins from custom bootstrap library
 @import bootstrap/variables
@@ -180,6 +179,8 @@ header .padding-container
       font-size: 0.9em
     .phone, .email
       display: inline-block
+      svg
+        width: 70%
       &:not(:last-child)
         margin-right: 20px
     @media screen and (min-width: 840px)
@@ -231,6 +232,22 @@ footer
   @media screen and (min-width: $card-breakpoint)
     font-size: 1.1em
     margin-left: 20px
+
+.about .close
+  +transition(transform 0.2s)
+  cursor: pointer
+  float: right
+  padding: 5px
+  margin: 10px
+  md-icon
+    width: 20px
+    height: 20px
+  &:hover
+    +transform(scale(1.3))
+  &:active
+    +transform(scale(0.8))
+  @media screen and (min-width: 900px)
+    margin: 30px 30px 5px 10px
 
 +keyframes(bounce)
   0%
