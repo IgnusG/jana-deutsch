@@ -1,0 +1,45 @@
+@import base
+
+body
+  +flexbox((flex-direction: column, justify-content: center, display: flex))
+  align-items: center
+  height: 100vh
+  color: white
+  text-align: center
+
+.quote
+  margin: 15px 0 15px 0
+  padding: 10px
+  font-size: 1.4em
+  .text
+    margin-bottom: 10px
+  .author
+    +box-sizing(border-box)
+    font-size: 0.6em
+    text-align: right
+    padding: 10px
+  @media screen and (min-width: 700px)
+    font-size: 1.6em
+  @media screen and (min-width: 800px)
+    font-size: 1.8em
+  @media screen and (min-width: 900px)
+    width: 500px
+    font-size: 2.2em
+
+.code
+  opacity: 0.15
+  font-size: 8em
+  div
+    +transform(translate(-50%, -100%))
+    position: absolute
+  @media screen and (min-width: 700px)
+    font-size: 10em
+  @media screen and (min-width: 900px)
+    font-size: 12em
+
+.go-back
+  color: white
+  text-decoration: none
+  font-size: 1.5em
+  padding-bottom: 5px
+  border-bottom: 1px solid white
