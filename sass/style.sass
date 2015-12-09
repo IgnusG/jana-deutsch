@@ -10,7 +10,13 @@
 @import compass/css3/animation
 
 .hasLvlTransition
-  +transition(transform 0.3s, opacity 0.3s)
+  // I don't like the redundancy of transform transition declaration
+  &.leveling-down-from-origin
+    +transition(transform 0.3s, opacity 0.2s 0.3s)
+  &.leveling-normal
+    +transition(transform 0.3s, opacity 0.3s)
+  &.leveling-up-to-origin
+    +transition(transform 0.3s, opacity 0.2s !important)
 
 .level-down
   +transform(scale(0.9))
@@ -99,13 +105,10 @@ header .padding-container
     @media screen and (min-width: $card-breakpoint)
       padding: 30px
     @media screen and (min-width: 840px)
-      padding: 50px
+      padding: 50px !important
 
 .about .padding-container
-  @media screen and (min-width: $card-breakpoint)
-    padding-top: 20px
-  @media screen and (min-width: 840px)
-    padding-top: 40px
+  padding-top: 30px
 
 .introduction, .about
   .text.first
@@ -189,12 +192,12 @@ header .padding-container
       padding-left: 40px
       padding-right: 40px
   .about-me
-    display: inline-block
     padding-top: 3px
     margin-top: 20px
     font-size: 1.05em
     color: #888888
-    @media screen and (min-width: 740px)
+    @media screen and (min-width: $card-breakpoint + 50)
+      display: inline-block
       float: right
       margin-top: 0
   &:hover
