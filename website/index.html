@@ -262,7 +262,7 @@
                 $timeout(function () {
                     $rootScope.showAboutCard = true;
                     $rootScope.displayAboutCard = true;
-                }, 0).then(function () {
+                }, 50).then(function () {
                     return $timeout(function () {
                         $rootScope.prepareShowContentCard = true;
                     }, 300)
@@ -274,7 +274,7 @@
 
                 $timeout(function () {
                     $rootScope.hideContentCards = false;
-                }, 0).then(function () {
+                }, 50).then(function () {
                     return $timeout(function () {
                         $rootScope.showAboutCard = false;
                         $rootScope.prepareShowContentCard = false;
