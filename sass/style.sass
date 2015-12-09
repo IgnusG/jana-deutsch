@@ -10,7 +10,13 @@
 @import compass/css3/animation
 
 .hasLvlTransition
-  +transition(transform 0.3s, opacity 0.3s)
+  // I don't like the redundancy of transform transition declaration
+  &.leveling-down-from-origin
+    +transition(transform 0.3s, opacity 0.2s 0.3s)
+  &.leveling-normal
+    +transition(transform 0.3s, opacity 0.3s)
+  &.leveling-up-to-origin
+    +transition(transform 0.3s, opacity 0.2s !important)
 
 .level-down
   +transform(scale(0.9))
@@ -22,6 +28,7 @@
   opacity: 1
 
 .level-up
+  +transition(opacity 0.3s)
   +transform(scale(1.1))
   opacity: 0
 

@@ -66,7 +66,8 @@
 
 <body ng-app="coreApp">
 
-<div class="content hasLvlTransition" id="content" ng-class="{'level-down': hideContentCards}">
+<div class="content hasLvlTransition leveling-down-from-origin" id="content"
+     ng-class="{'level-down': hideContentCards, 'leveling-up-to-origin': prepareShowContentCard}">
     <header class="card">
         <div class="padding-container">
             <div class="profile-container" ng-controller="DescriptionCtrl as info">
@@ -181,7 +182,8 @@
         <div class="divider"></div>
     </footer>
 </div>
-<div class="overlay hasLvlTransition" id="overlay" ng-show="showAboutCard" ng-class="{'level-up': !displayAboutCard}">
+<div class="overlay hasLvlTransition leveling-normal" id="overlay" ng-show="showAboutCard"
+     ng-class="{'level-up': !displayAboutCard}">
     <div class="card about" id="about">
         <div class="close" svg-icon="../images/icons/close.svg" ng-click="closeAboutCard()"></div>
         <div class="padding-container">
@@ -249,6 +251,7 @@
         app.run(["$rootScope", "$timeout", function ($rootScope, $timeout) {
             $rootScope.phone = "+421 905 747 730";
 
+            $rootScope.prepareShowContentCard = false;
             $rootScope.hideContentCards = false;
             $rootScope.showAboutCard = false;
             $rootScope.displayAboutCard = false;
@@ -262,6 +265,10 @@
                     return $timeout(function () {
                         $rootScope.displayAboutCard = true;
                     }, 0)
+                }).then(function () {
+                    return $timeout(function () {
+                        $rootScope.prepareShowContentCard = true;
+                    }, 200)
                 });
             };
 
@@ -273,6 +280,7 @@
                 }, 100).then(function () {
                     return $timeout(function () {
                         $rootScope.showAboutCard = false;
+                        $rootScope.prepareShowContentCard = false;
                     }, 200)
                 });
             }
