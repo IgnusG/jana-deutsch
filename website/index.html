@@ -261,14 +261,11 @@
 
                 $timeout(function () {
                     $rootScope.showAboutCard = true;
-                }, 100).then(function () {
-                    return $timeout(function () {
-                        $rootScope.displayAboutCard = true;
-                    }, 0)
-                }).then(function () {
+                    $rootScope.displayAboutCard = true;
+                }, 0).then(function () {
                     return $timeout(function () {
                         $rootScope.prepareShowContentCard = true;
-                    }, 200)
+                    }, 300)
                 });
             };
 
@@ -277,11 +274,11 @@
 
                 $timeout(function () {
                     $rootScope.hideContentCards = false;
-                }, 100).then(function () {
+                }, 0).then(function () {
                     return $timeout(function () {
                         $rootScope.showAboutCard = false;
                         $rootScope.prepareShowContentCard = false;
-                    }, 200)
+                    }, 300)
                 });
             }
         }])
