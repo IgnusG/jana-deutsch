@@ -1,3 +1,5 @@
 /website/stylesheets
 .idea/ 
 .sass-cache/
+.firebase/
+node_modules/
