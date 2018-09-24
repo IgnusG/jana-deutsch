@@ -41,19 +41,17 @@ body
     //noinspection CssUnknownTarget
     background: url(../images/background-with-quote.jpg) center center no-repeat
 
-ul
-  +list-style(none)
-  padding-left: 10px
-  border-left: 1px solid #4d4c4c
-  li
-    line-height: 1.2
-    font-size: 0.885em
-    &:not(:last-child)
-      padding-bottom: 10px
-
 .introduction, .about
   ul
+    +list-style(none)
     margin-top: 8px
+    padding-left: 10px
+    border-left: 1px solid #4d4c4c
+    li
+      line-height: 1.2
+      font-size: 0.885em
+      &:not(:last-child)
+        padding-bottom: 10px
 
 $card-breakpoint: 570px
 .content, .overlay
@@ -99,7 +97,7 @@ header .padding-container
   @media screen and (min-width: 840px)
     padding: 40px
 
-.introduction, .about
+.introduction, .overlay
   .padding-container
     padding: 15px
     @media screen and (min-width: $card-breakpoint)
@@ -107,10 +105,10 @@ header .padding-container
     @media screen and (min-width: 840px)
       padding: 50px !important
 
-.about .padding-container
+.overlay .card .padding-container
   padding-top: 30px
 
-.introduction, .about
+.introduction, .overlay
   .text.first
     font-size: 1.3em
     margin-bottom: 16px
@@ -210,9 +208,19 @@ header .padding-container
   margin: 20px
   display: inline-block
 
-.about
+.overlay.ready
+  visibility: initial !important
+
+.overlay .card
   margin-top: 30px
   margin-bottom: 30px
+
+.close-card-button
+  margin-top: 25px
+  font-size: 1.5em
+  cursor: pointer
+  margin-bottom: 0
+  text-align: center
 
 footer
   +white-correction(1.3, true)
@@ -247,7 +255,25 @@ footer
   @media screen and (min-width: $card-breakpoint)
     font-size: 1.1em
 
-.about .close
+.privacy-notice-link
+  font-weight: bold
+  cursor: pointer
+  md-icon
+    color: white
+    height: 100%
+    vertical-align: baseline
+    svg
+      height: 14px
+
+.overlay-privacy-notice
+  font-size: 0.7em
+  font-family: sans-serif
+  .text.first
+    font-size: 2em
+  ol
+    list-style-type: lower-alpha
+
+.overlay .close
   +transition(transform 0.2s)
   cursor: pointer
   float: right

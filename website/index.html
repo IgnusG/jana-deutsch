@@ -169,8 +169,14 @@
         <a class="moodle" href="https://jana-deutsch.moodlecloud.com">Bereits ein Teilnehmer? Hier gehts weiter!</a>
     </div>
     <footer class="card">
-        <div class="copyright">Copyright &copy;
-            <script> document.write((new Date).getFullYear()) </script> - Alle Rechte vorbehalten</div>
+        <div class="copyright">
+            <div>
+                Copyright &copy;<script> document.write((new Date).getFullYear()) </script> - Alle Rechte vorbehalte
+            </div>
+            <div class="privacy-notice-link" ng-click="openPrivacyNoticeCard()">
+                Ochrana osobných údajov (Datenschutz-Informationen) <md-icon md-svg-src='images/icons/link.svg'></md-icon>
+            </div>
+        </div>
         <!--DEV: iOS Fix: padding and margins cause width overflows on display flex-->
         <div class="divider"></div>
         <div class="referrals">
@@ -186,8 +192,8 @@
         <div class="divider"></div>
     </footer>
 </div>
-<div class="overlay hasLvlTransition leveling-normal" id="overlay" ng-show="showAboutCard"
-     ng-class="{'level-up': !displayAboutCard}">
+<div class="overlay-about overlay hasLvlTransition leveling-normal" ng-show="showAboutCard" style="visibility: hidden;"
+     ng-class="{'level-up': !displayAboutCard, 'ready': ready}">
     <div class="card about" id="about">
         <div class="close" svg-icon="../images/icons/close.svg" ng-click="closeAboutCard()"></div>
         <div class="padding-container">
@@ -255,6 +261,153 @@
         </div>
     </div>
 </div>
+<div class="overlay-privacy-notice overlay hasLvlTransition leveling-normal" ng-show="showPrivacyNoticeCard" style="visibility: hidden;"
+     ng-class="{'level-up': !displayPrivacyNoticeCard, 'ready': ready}">
+    <div class="card privacy-notice" id="privacy-notice">
+        <div class="close" svg-icon="../images/icons/close.svg" ng-click="closePrivacyNoticeCard()"></div>
+        <div class="padding-container">
+            <h1 class="text first">
+                Ochrana osobných údajov
+            </h1>
+            <div class="natural-margin">
+                <h3>Informácie o spracúvaní osobných údajov poskytované podľa článku 13 Nariadenia</h3>
+                <p>S účinnosťou odo dňa 25.05.2018 sú všetky osobné údaje spracúvané v súlade s Nariadením Európskeho parlamentu a Rady (EÚ) 2016/679 z 27. apríla 2016 o ochrane fyzických osôb pri spracúvaní osobných údajov a o voľnom pohybe takýchto údajov, ktorým sa zrušuje smernica 95/46/ES (všeobecné nariadenie o ochrane údajov - ďalej len <strong>„Nariadenie“</strong>).</p>
+            </div>
+            <div class="natural-margin">
+                <h2>1. Totožnosť a kontaktné údaje poskytovateľa jazykovej výučby:</h2>
+                <p>Poskytovateľom jazykovej výučby, ktorý spracúva osobné údaje, je spoločnosť <strong>Deutsch effektiv, s.r.o.</strong>, so sídlom Parková 9, 91701, Trnava, IČO: 50 989 651, zapísaná v Obchodnom registri Okresného súdu Trnava, odd.: Sro, vložka č.: 40480/T (ďalej aj <strong>„Poskytovateľ jazykovej výučby“</strong>).</p>
+            </div>
+            <div class="natural-margin">
+                <h2>2. Kontaktné údaje zodpovednej osoby poskytovateľa jazykovej výučby:</h2>
+                <p>Zodpovednú osobu poskytovateľa jazykovej výučby možno kontaktovať na adrese: <a href="mailto:contact@jana-deutsch.com" target="_top">contact@jana-deutsch.com</a>.</p>
+            </div>
+            <div class="natural-margin">
+                <h2>3. Práva dotknutej osoby:</h2>
+                <h3>Právo požadovať od poskytovateľa jazykovej výučby prístup k osobným údajom, ktoré sa jej týkajú, podľa článku 15 Nariadenia:</h3>
+                <p>Dotknutá osoba má právo získať od poskytovateľa jazykovej výučby potvrdenie o tom, či sa spracúvajú osobné údaje, ktoré sa jej týkajú, a ak tomu tak je, má právo získať prístup k týmto osobným údajom a tieto informácie:</p>
+                <ol>
+                    <li>účely spracúvania;</li>
+                    <li>kategórie dotknutých osobných údajov;</li>
+                    <li>príjemcovia alebo kategórie príjemcov, ktorým boli alebo budú osobné údaje poskytnuté, najmä príjemcovia v tretích krajinách alebo medzinárodné organizácie;</li>
+                    <li>ak je to možné, predpokladaná doba uchovávania osobných údajov, alebo ak to nie je možné, kritériá na jej určenie;</li>
+                    <li>existencia práva požadovať od poskytovateľ jazykovej výučby opravu osobných údajov týkajúcich sa dotknutej osoby alebo ich vymazanie alebo obmedzenie spracúvania, alebo práva namietať proti takémuto spracúvaniu;</li>
+                    <li>právo podať sťažnosť dozornému orgánu;</li>
+                    <li>ak sa osobné údaje nezískali od dotknutej osoby, akékoľvek dostupné informácie, pokiaľ ide o ich zdroj;</li>
+                    <li>existencia automatizovaného rozhodovania vrátane profilovania uvedeného v článku 22 ods. 1 a 4 Nariadenia a v týchto prípadoch aspoň zmysluplné informácie o použitom postupe, ako aj význame a predpokladaných dôsledkoch takéhoto spracúvania pre dotknutú osobu.</li>
+                </ol>
+                <p>Ak sa osobné údaje prenášajú do tretej krajiny alebo medzinárodnej organizácii, dotknutá osoba má právo byť informovaná o primeraných zárukách týkajúcich sa prenosu podľa článku 46 Nariadenia.</p>
+            </div>
+            <div class="natural-margin">
+                <p>Poskytovateľ jazykovej výučby poskytne kópiu osobných údajov, ktoré sa spracúvajú. Za akékoľvek ďalšie kópie, o ktoré dotknutá osoba požiada, môže prevádzkovateľ účtovať primeraný poplatok zodpovedajúci administratívnym nákladom. Ak dotknutá osoba podala žiadosť elektronickými prostriedkami, informácie sa poskytnú v bežne používanej elektronickej podobe, pokiaľ dotknutá osoba nepožiadala o iný spôsob. Právo získať kópiu nesmie mať nepriaznivé dôsledky na práva a slobody iných.</p>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo na opravu osobných údajov podľa článku 16 Nariadenia:</h3>
+                <p>Dotknutá osoba má právo na to, aby poskytovateľ jazykovej výučby bez zbytočného odkladu opravil nesprávne osobné údaje, ktoré sa jej týkajú. So zreteľom na účely spracúvania má dotknutá osoba právo na doplnenie neúplných osobných údajov, a to aj prostredníctvom poskytnutia doplnkového vyhlásenia.</p>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo na vymazanie (právo  „na zabudnutie“) podľa článku 17 Nariadenia:</h3>
+                <p>Dotknutá osoba má tiež právo dosiahnuť u poskytovateľa jazykovej výučby bez zbytočného odkladu vymazanie osobných údajov, ktoré sa jej týkajú, a poskytovateľ jazykovej výučby je povinný bez zbytočného odkladu vymazať osobné údaje, ak je splnený niektorý z týchto dôvodov:</p>
+                <ol>
+                    <li>osobné údaje už nie sú potrebné na účely, na ktoré sa získavali alebo inak spracúvali;</li>
+                    <li>dotknutá osoba odvolá súhlas, na základe ktorého sa spracúvanie vykonáva, podľa článku 6 ods. 1 písm. a) alebo článku 9 ods. 2 písm. a) Nariadenia, a ak neexistuje iný právny základ pre spracúvanie;</li>
+                    <li>dotknutá osoba namieta voči spracúvaniu podľa článku 21 ods. 1 Nariadenia a neprevažujú žiadne oprávnené dôvody na spracúvanie alebo dotknutá osoba namieta voči spracúvaniu podľa článku 21 ods. 2 Nariadenia;</li>
+                    <li>osobné údaje sa spracúvali nezákonne;</li>
+                    <li>osobné údaje musia byť vymazané, aby sa splnila zákonná povinnosť podľa práva Únie alebo práva členského štátu, ktorému poskytovateľ jazykovej výučby podlieha;</li>
+                    <li>osobné údaje sa získavali v súvislosti s ponukou služieb informačnej spoločnosti podľa článku 8 ods. 1 Nariadenia.</li>
+                </ol>
+            </div>
+            <div class="natural-margin">
+                <p>Ak poskytovateľ jazykovej výučby zverejnil osobné údaje a je povinný vymazať osobné údaje, so zreteľom na dostupnú technológiu a náklady na vykonanie opatrení podnikne primerané opatrenia vrátane technických opatrení, aby informoval prevádzkovateľov, ktorí vykonávajú spracúvanie osobných údajov, že dotknutá osoba ich žiada, aby vymazali všetky odkazy na tieto osobné údaje, ich kópiu alebo repliky.</p>
+            </div>
+            <div class="natural-margin">
+                <p>Právo na vymazanie sa neuplatňuje, pokiaľ je spracúvanie potrebné:</p>
+                <ol>
+                    <li>na uplatnenie práva na slobodu prejavu a na informácie;</li>
+                    <li>na splnenie zákonnej povinnosti, ktorá si vyžaduje spracúvanie podľa práva Únie alebo práva členského štátu, ktorému poskytovateľ jazykovej výučby podlieha, alebo na splnenie úlohy realizovanej vo verejnom záujme alebo pri výkone verejnej moci zverenej prevádzkovateľovi;</li>
+                    <li>z dôvodov verejného záujmu v oblasti verejného zdravia v súlade s článkom 9 ods. 2 písm. h) a i), ako aj článkom 9 ods. 3 Nariadenia;</li>
+                    <li>na účely archivácie vo verejnom záujme, na účely vedeckého alebo historického výskumu či na štatistické účely podľa článku 89 ods. 1 Nariadenia, pokiaľ je pravdepodobné, že právo uvedené vyššie znemožní alebo závažným spôsobom sťaží dosiahnutie cieľov takéhoto spracúvania, alebo</li>
+                    <li>na preukazovanie, uplatňovanie alebo obhajovanie právnych nárokov.</li>
+                </ol>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo na obmedzenie spracúvania podľa článku 18 Nariadenia:</h3>
+                <p>Dotknutá osoba má právo na to, aby poskytovateľ jazykovej výučby obmedzil spracúvanie, pokiaľ ide o jeden z týchto prípadov:</p>
+                <ol>
+                    <li>dotknutá osoba napadne správnosť osobných údajov, a to počas obdobia umožňujúceho poskytovateľovi jazykovej výučby overiť správnosť osobných údajov;</li>
+                    <li>spracúvanie je protizákonné a dotknutá osoba namieta proti vymazaniu osobných údajov a žiada namiesto toho obmedzenie ich použitia;</li>
+                    <li>poskytovateľ jazykovej výučby už nepotrebuje osobné údaje na účely spracúvania, ale potrebuje ich dotknutá osoba na preukázanie, uplatňovanie alebo obhajovanie právnych nárokov;</li>
+                    <li>dotknutá osoba namietala voči spracúvaniu podľa článku 21 ods. 1 Nariadenia, a to až do overenia, či oprávnené dôvody na strane poskytovateľa jazykovej výučby prevažujú nad oprávnenými dôvodmi dotknutej osoby.</li>
+                </ol>
+                <p>Ak sa spracúvanie v súlade s vyššie obmedzeným obmedzilo, takéto osobné údaje sa s výnimkou uchovávania spracúvajú len so súhlasom dotknutej osoby alebo na preukazovanie, uplatňovanie alebo obhajovanie právnych nárokov, alebo na ochranu práv inej fyzickej alebo právnickej osoby, alebo z dôvodov dôležitého verejného záujmu Únie alebo členského štátu.</p>
+                <p>Dotknutú osobu, ktorá dosiahla obmedzenie spracúvania v súlade s vyššie uvedeným, poskytovateľ jazykovej výučby informuje pred tým, ako bude obmedzenie spracúvania zrušené.</p>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo na prenosnosť údajov podľa článku 20 Nariadenia:</h3>
+                <p>Dotknutá osoba má právo získať osobné údaje, ktoré sa jej týkajú a ktoré poskytla poskytovateľovi jazykovej výučby, v štruktúrovanom, bežne používanom a strojovo čitateľnom formáte a má právo preniesť tieto údaje ďalšiemu prevádzkovateľovi bez toho, aby jej prevádzkovateľ, ktorému sa tieto osobné údaje poskytli, bránil, ak: a) sa spracúvanie zakladá na súhlase podľa článku 6 ods. 1 písm. a) alebo článku 9 ods. 2 písm. a) nariadenia, alebo na zmluve podľa článku 6 ods. 1 písm. b) nariadenia, a b) ak sa spracúvanie vykonáva automatizovanými prostriedkami.</p>
+                <p>Dotknutá osoba má pri uplatňovaní svojho práva na prenosnosť údajov právo na prenos osobných údajov priamo od jedného poskytovateľa jazykovej výučby druhému poskytovateľovi pokiaľ je to technicky možné.</p>
+                <p>Uplatňovaním práva nie je dotknutý článok 17 Nariadenia Uvedené právo sa nevzťahuje na spracúvanie nevyhnutné na splnenie úlohy realizovanej vo verejnom záujme alebo pri výkone verejnej moci zverenej poskytovateľovi jazykovej výučby. Právo na prenosnosť údajov nesmie mať nepriaznivé dôsledky na práva a slobody iných.</p>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo namietať proti spracúvaniu vrátane namietania proti profilovaniu (ak sa vykonáva) podľa článku 21 Nariadenia:</h3>
+                <p>Dotknutá osoba má právo kedykoľvek namietať z dôvodov týkajúcich sa jej konkrétnej situácie proti spracúvaniu osobných údajov, ktoré sa jej týka, ktoré je vykonávané na základe článku 6 ods. 1 písm. e) (spracúvanie nevyhnutné na splnenie úlohy realizovanej vo verejnom záujme alebo pri výkone verejnej moci zverenej poskytovateľovi jazykovej výučby) alebo f) (spracúvanie nevyhnutné na účely oprávnených záujmov, ktoré sleduje poskytovateľ jazykovej výučby alebo tretia strana) nariadenia vrátane namietania proti profilovaniu založenému na uvedených ustanoveniach. Poskytovateľ jazykovej výučby nesmie ďalej spracúvať osobné údaje, pokiaľ nepreukáže nevyhnutné oprávnené dôvody na spracúvanie, ktoré prevažujú nad záujmami, právami a slobodami dotknutej osoby, alebo dôvody na preukazovanie, uplatňovanie alebo obhajovanie právnych nárokov.</p>
+                <p>Ak sa osobné údaje spracúvajú na účely priameho marketingu, dotknutá osoba má právo kedykoľvek namietať proti spracúvaniu osobných údajov, ktoré sa jej týka, na účely takéhoto marketingu, vrátane profilovania v rozsahu, v akom súvisí s takýmto priamym marketingom. Ak dotknutá osoba namieta voči spracúvaniu na účely priameho marketingu, osobné údaje sa už na také účely nesmú spracúvať.</p>
+                <p>V súvislosti s používaním služieb informačnej spoločnosti a bez ohľadu na smernicu 2002/58/ES môže dotknutá osoba uplatňovať svoje právo namietať automatizovanými prostriedkami s použitím technických špecifikácií. Ak sa osobné údaje spracúvajú na účely vedeckého alebo historického výskumu či na štatistické účely podľa článku 89 ods. 1 nariadenia, dotknutá osoba má právo namietať z dôvodov týkajúcich sa jej konkrétnej situácie proti spracúvania osobných údajov, ktoré sa jej týka, s výnimkou prípadov, keď je spracúvanie nevyhnutné na plnenie úlohy z dôvodov verejného záujmu.</p>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo podať sťažnosť dozornému orgánu:</h3>
+                <p>Dotknutá Osoba má právo podať sťažnosť na Úrad na ochranu osobných údajov Slovenskej republiky, so sídlom Hraničná 12, 820 07 Bratislava, najmä ak sa domnieva, že je dotknutá na svojich právach ustanovených Nariadením.</p>
+            </div>
+            <div class="natural-margin">
+                <h3>Právo odvolať súhlas so spracúvaním:</h3>
+                <p>V prípade, ak právnym základom spracúvania osobných údajov je súhlas dotknutej osoby, dotknutá osoba je oprávnená kedykoľvek svoj súhlas odvolať bez toho, aby to malo vplyv na zákonnosť spracúvania založeného na súhlase udelenom pred jeho odvolaním.</p>
+                <p>Právo kedykoľvek odvolať súhlas, a to aj pred uplynutím doby, na ktorú bol tento súhlas udelený, môže dotknutá osoba uplatniť nasledujúcimi spôsobmi:</p>
+                <ol>
+                    <li>emailovou správou zaslanou na adresu: <a href="mailto:contact@jana-deutsch.com" target="_top">contact@jana-deutsch.com</a>,</li>
+                    <li>zaslaním písomnej žiadosti na adresu sídla poskytovateľa jazykovej výučby s uvedením textu „GDPR – odvolanie súhlasu“ na obálke.</li>
+                </ol>
+            </div>
+            <div class="natural-margin">
+                <h2>4. Forma uplatnenia práv dotknutej osoby</h2>
+                <p>Dotknutá osoba môže uplatniť svoje práva písomne u poskytovateľa jazykovej výučby (vrátane správy zaslanej prostredníctvom elektronickej pošty), pričom z obsahu jej žiadosti musí vyplývať, že uplatňuje niektoré zo svojich vyššie uvedených práv; v takom prípade sa žiadosť považuje za podanú podľa Nariadenia.</p>
+                <p>V prípade, že si dotknutá osoba uplatňuje niektoré z vyššie uvedených práv dotknutej osoby podľa Nariadenia a z podanej žiadosti nie je možné overiť totožnosť žiadateľa alebo v prípade, že poskytovateľ jazykovej výučby má oprávnené pochybnosti v súvislosti s totožnosťou osoby, ktorá podáva žiadosť, poskytovateľ jazykovej výučby si vyhradzuje právo túto osobu požiadať o poskytnutie dodatočných informácií potrebných na potvrdenie totožnosti osoby uplatňujúcej danú žiadosť.</p>
+                <p>Kontaktné údaje poskytovateľa jazykovej výučby, na ktorých možno uplatniť právo dotknutej osoby sú nasledovné:</p>
+                <ul>
+                    <li>e-mail: <a href="mailto:contact@jana-deutsch.com" target="_top">contact@jana-deutsch.com</a> alebo</li>
+                    <li>poštová adresa sídla poskytovateľa jazykovej výučby: Deutsch effektiv, s.r.o., Parková 9, 917 01 Trnava alebo</li>
+                    <li>telefónne číslo: 0905747730.</li>
+                </ul>
+            </div>
+            <div class="natural-margin">
+                <h2>5. Účel a právny základ spracúvania osobných údajov</h2>
+                <p>Poskytovateľ jazykovej výučby spracúva Vaše osobné údaje na nasledujúce účely:</p>
+                <ol>
+                    <li>Účelom spracúvania osobných údajov <strong>v oblasti obchodnej komunikácie poskytovateľa jazykovej výučby</strong> je plnenie zazmuvnených povinností poskytovateľa jazykovej výučby. Lehota uchovávania osobných údajov je 10 rokov, ak nie je v osobitných predpisoch stanovené inak. Príjemcami osobných údajov môže byť v nevyhnutnom rozsahu moodle-platforma vydavateľstva Hueber: https://jana-deutsch.moodlecloud.com/my/. </li>
+                    <li>
+                        <p>Účelom spracúvania osobných údajov v oblasti <strong>obchodnej komunikácie a obchodnej činnosti</strong> poskytovateľa jazykovej výučby je príprava a realizácia podnikateľských aktivít poskytovateľa jazykovej výučby, v rámci ktorej dochádza k spracúvaniu identifikačných údajov obchodných partnerov a kontaktných údajov fyzických osôb, pokiaľ je spracúvanie ich osobných údajov nevyhnutné na dosiahnutie stanoveného účelu poskytovateľa jazykovej výučby, a ďalších informácií o obchodných partneroch poskytovateľa jazykovej výučby, údajov týkajúcich sa zmluvných vzťahov s obchodnými partnermi a údajov obsiahnutých v komunikácii medzi poskytovateľom jazykovej výučby a jeho obchodnými partnermi.</p>
+                        <p>Oprávneným záujmom poskytovateľa jazykovej výučby je právo podnikať v rozsahu predmetu jeho činnosti a zabezpečiť v rámci výkonu svojej obchodnej činnosti efektívnu komunikáciu so svojimi obchodnými partnermi, najmä v rámci organizácie práce. Lehota uchovávania osobných údajov je determinovaná prípravou a trvaním obchodnoprávneho vzťahu, a obdobím 4 rokov od ukončenia tohto obchodnoprávneho vzťahu alebo ak nedošlo k uzatvoreniu zmluvného vzťahu, od poslednej komunikácie s obchodným partnerom, ak nie je v osobitných predpisoch stanovená dlhšia zákonná lehota. Príjemcami osobných údajov môžu byť spoločnosti vykonávajúce správu a podporu informačných technológií, menovite moodle-platforma vydavateľstva Hueber.</p>
+                        <p>Ďalšie informácie o spracúvaní osobných údajov zákazníkov sú uvedené explicitne po prihlásení sa do moodle-platformy vydavateľstva Hueber. </p>
+                    </li>
+                </ol>
+            </div>
+            <div class="natural-margin">
+                <h2>6. Cezhraničný prenos osobných údajov</h2>
+                <p>Osobné údaje nie sú poskytované poskytovateľom jazykovej výučby do tretích krajín (mimo územia EÚ/EHP). V prípade, ak by poskytovateľ jazykovej výučby osobné údaje poskytol svojim poskytovateľom služieb mimo Európskeho hospodárskeho priestoru (EHP), toto poskytnutie možno uskutočniť len na základe rozhodnutia Európskej komisie o  primeranom stupni úrovne ochrany osobných údajov v tejto tretej krajine alebo na základe poskytnutia iných vhodných záruk v súlade s kapitolou V GDPR.</p>
+            </div>
+            <div class="natural-margin">
+                <h2>7. Rozhodovanie založené výlučne na automatizovanom spracúvaní údajov</h2>
+                <p>Pri spracúvaní osobných údajov dotknutých osôb nedochádza k rozhodovaniu podľa čl. 22 GDPR, ktoré je založené výlučne na automatizovanom spracúvaní, ktoré má právne účinky, ktoré sa týkajú dotknutej osoby alebo ju podobne významne ovplyvňujú. </p>
+            </div>
+            <div class="natural-margin">
+                <h2>8. Právo namietať proti spracúvaniu osobných údajov</h2>
+                <p><strong>Právo namietať proti spracúvaniu podľa čl. 21 GDPR</strong></p>
+                <p><strong>Dotknutá osoba má právo kedykoľvek odmietnuť spracúvanie svojich osobných údajov.</strong></p>
+                <p><strong>Ak poskytovateľ jazykovej výučby spracúva osobné údaje dotknutej osoby na zabezpečenie oprávnených záujmov poskytovateľa jazykovej výučbyalebo tretej osoby, dotknutá osoba môže kedykoľvek proti takému spracúvaniu namietať; v takom prípade poskytovateľ jazykovej výučby môže osobné údaje ďalej spracúvať len v prípade, ak preukáže existenciu nevyhnutných oprávnených dôvodov, ktoré prevažujú nad záujmami, právami a slobodami dotknutej osoby, alebo ak sú tieto údaje potrebné na preukazovanie, uplatňovanie alebo obhajovanie právnych nárokov.</strong></p>
+            </div>
+
+            <div class="natural-margin close-card-button" ng-click="closePrivacyNoticeCard()">Zavrieť</div>
+        </div>
+    </div>
+</div>
 
 <script src="scripts/description.js"></script>
 <script src="scripts/utilities.js"></script>
@@ -263,37 +416,49 @@
         var app = angular.module("coreApp", ["ngMaterial", "smoothScroll", "description", "utilities"]);
         app.run(["$rootScope", "$timeout", function ($rootScope, $timeout) {
             $rootScope.phone = "+421 905 747 730";
+            $rootScope.ready = true;
 
             $rootScope.prepareShowContentCard = false;
             $rootScope.hideContentCards = false;
             $rootScope.showAboutCard = false;
+            $rootScope.showPrivacyNoticeCard = false;
             $rootScope.displayAboutCard = false;
+            $rootScope.displayPrivacyNoticeCard = false;
 
-            $rootScope.openAboutCard = function () {
-                $rootScope.hideContentCards = true;
+            function openCard(showCard, displayCard) {
+                return function () {
+                    $rootScope.hideContentCards = true;
 
-                $timeout(function () {
-                    $rootScope.showAboutCard = true;
-                    $rootScope.displayAboutCard = true;
-                }, 50).then(function () {
-                    return $timeout(function () {
-                        $rootScope.prepareShowContentCard = true;
-                    }, 300)
-                });
-            };
-
-            $rootScope.closeAboutCard = function () {
-                $rootScope.displayAboutCard = false;
-
-                $timeout(function () {
-                    $rootScope.hideContentCards = false;
-                }, 50).then(function () {
-                    return $timeout(function () {
-                        $rootScope.showAboutCard = false;
-                        $rootScope.prepareShowContentCard = false;
-                    }, 300)
-                });
+                    $timeout(function () {
+                        $rootScope[showCard] = true;
+                        $rootScope[displayCard] = true;
+                    }, 50).then(function () {
+                        return $timeout(function () {
+                            $rootScope.prepareShowContentCard = true;
+                        }, 300)
+                    });
+                }
             }
+
+            function closeCard(showCard, displayCard) {
+                return function () {
+                    $rootScope[displayCard] = false;
+
+                    $timeout(function () {
+                        $rootScope.hideContentCards = false;
+                    }, 50).then(function () {
+                        return $timeout(function () {
+                            $rootScope[showCard] = false;
+                            $rootScope.prepareShowContentCard = false;
+                        }, 300)
+                    });
+                }
+            }
+
+            $rootScope.openAboutCard = openCard("showAboutCard", "displayAboutCard");
+            $rootScope.closeAboutCard = closeCard("showAboutCard", "displayAboutCard");
+            $rootScope.openPrivacyNoticeCard = openCard("showPrivacyNoticeCard", "displayPrivacyNoticeCard");
+            $rootScope.closePrivacyNoticeCard = closeCard("showPrivacyNoticeCard", "displayPrivacyNoticeCard");
         }])
     })(window);
 </script>
